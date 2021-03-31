@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+#echo "path to rmount config file (usually ~/.config/rclone/rclone.conf)"
+#read rmount_config
+#echo "Enter your mount point:"
+#read mount_point
+
+echo "Enter the drive's name as configured in rmount:"
+drives=()
+
+
+while [ ! ${finished} ]
+do
+    read input
+    drives+=$input
+
+    echo 
+    read -p "Do you wish to add another drive?" yn
+    case $yn in
+        [Yy]* ) make install; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+echo $drives
+
