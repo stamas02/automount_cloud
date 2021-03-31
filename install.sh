@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "path to rmount config file (usually ~/.config/rclone/rclone.conf)"
-read rmount_config
+echo "path to rclone config file (usually ~/.config/rclone/rclone.conf)"
+read rclone_config
 echo "Enter your mount point (e.g. /media/[username]/)"
 read mount_point
 
-rmount_config=$( eval "realpath ${rmount_config}" )
+rclone_config=$( eval "realpath ${rclone_config}" )
 mount_point=$( eval "realpath ${mount_point}" )
 
-echo "Enter the drive's name as configured in rmount:"
+echo "Enter the drive's name as configured in rclone:"
 drives=()
 
 finished=false
